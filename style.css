@@ -18,7 +18,7 @@ body {
     text-align: center;
     font-family: "Press Start 2P";
 }
-.section {
+section {
     height: 100vh;
     padding: 40px;
     align-items: center;
@@ -66,17 +66,17 @@ header {
 }
 .feedback-grid {
     display: flex;
-    flex-direction: column; /* Stacks them cleanly top-to-bottom */
-    gap: 12px;             /* Puts a perfect space between each button */
-    max-width: 400px;      /* Keeps the buttons from stretching too wide */
-    margin: 0 auto;        /* Centers the whole block on the iPad screen */
+    flex-direction: row; 
+    flex-wrap: wrap;
+    gap: 12px;             
+    max-width: 400px;      
+    margin: 0 auto;       
 }
 
 .feedback-grid button {
-    padding: 12px;
-    font-size: 1.1rem;
-    border-radius: 8px;
-    border: none;
+    padding: 20px;
+    border-radius: 30px;
+    border: 5px solid white;
     cursor: pointer;
     font-weight: bold;
 }

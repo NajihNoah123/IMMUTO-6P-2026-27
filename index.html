@@ -22,10 +22,10 @@
     <br>
     <br>
     <br>
-    <section id="Start" class="section">
+    <section id="Start">
         <button class="exe-btn" onclick="goToSection('Weather')">Start the game</button>
     </section>
-    <section id="Weather" class="section">
+    <section id="Weather">
         <h2>Weather News</h2>
         <div class="separate-section">
             <img src="assets/windy-weather.jpg" class="windy-weather">
@@ -33,7 +33,7 @@
         </div>
         <button onclick="goToSection('Select-Hull-Shape')" class="exe-btn">Select the shape</button>
     </section>
-    <section id="Select-Hull-Shape" class="section">
+    <section id="Select-Hull-Shape">
         <h1><i>Phase 1</i>: Select the hull shape</h1>
         <div class="separate-section-content-row">
         <div class="section-content">
@@ -60,7 +60,7 @@
             <h5>The status is: </h5><h5 id="drag-value"></h5>
         </div>
     </section>
-    <section class="section" id="shape-launch">
+    <section id="shape-launch">
         <h2>Time to launch</h2>
         <p>It's time to launch our maglev train through the air. Click Launch once and watch the countdown </p>
         <button class="exe-btn" onclick="dragCountdown()">Launch</button>
@@ -70,10 +70,10 @@
         <br>
         <button class="exe-btn" onclick="goToSection('phase-1-feedback')">Finished launch? Click Here</button>
     </section>
-    <section id="phase-1-feedback" class="section">
+    <section id="phase-1-feedback">
         <h2>How do you feel about phase 1?</h2>
         <hr>
-        <div class="separate-section-content-row">
+            <div class="feedback-grid">
             <button class="green">🚀 Optimal</button>
             <button class="lighter-green">⚡ Efficient</button>
             <button class="yellow">⚖️ Decent</button>
