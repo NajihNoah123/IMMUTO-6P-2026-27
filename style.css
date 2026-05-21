@@ -64,6 +64,22 @@ header {
     font-size: xx-large;
     margin-top: 100px;
 }
+.feedback-grid {
+    display: flex;
+    flex-direction: column; /* Stacks them cleanly top-to-bottom */
+    gap: 12px;             /* Puts a perfect space between each button */
+    max-width: 400px;      /* Keeps the buttons from stretching too wide */
+    margin: 0 auto;        /* Centers the whole block on the iPad screen */
+}
+
+.feedback-grid button {
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
 .green { background-color: #2ecc71; color: white; }
 .lighter-green { background-color: #a3e4d7; color: #111; }
 .yellow { background-color: #f1c40f; color: #111; }
