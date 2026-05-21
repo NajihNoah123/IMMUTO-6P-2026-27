@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immuto Intra Science Project - 6P</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <center>
+            <h1>Immuto 4.0 Project - 6P</h1>
+            <h3>Developed by: Najih, Ayaan Mirza, and Vihas</h3>
+            <h3><b>Topic:- </b>Mag-Lab: An arcade for Maglev concepts</h3>
+        </center>
+    </header>
+    <center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section id="Start" class="section">
+        <button class="exe-btn" onclick="goToSection('Weather')">Start the game</button>
+    </section>
+    <section id="Weather" class="section">
+        <h2>Weather News</h2>
+        <div class="separate-section">
+            <img src="assets/windy-weather.jpg" class="windy-weather">
+            <p class="textside-img">The train has to go through a crosswind! You have to select the best shape for the hull of the train to reduce drag on train and get maximum efficiency</p>
+        </div>
+        <button onclick="goToSection('Select-Hull-Shape')" class="exe-btn">Select the shape</button>
+    </section>
+    <section id="Select-Hull-Shape" class="section">
+        <h1><i>Phase 1</i>: Select the hull shape</h1>
+        <div class="separate-section-content-row">
+        <div class="section-content">
+            <img src="assets/cone-train.png" class="shape-img">
+            <h4>Cone-Shaped Hull</h4>
+            <button id="cone" onclick="checkShapeClicked(this)" class="exe-btn">Select Shape</button>
+        </div>
+        <div class="section-content">
+            <img src="assets/brick-train.png" class="shape-img">
+            <h4>Brick-Shaped Hull</h4>
+            <button id="brick" onclick="checkShapeClicked(this)" class="exe-btn">Select Shape</button>
+        </div>
+        <div class="section-content">
+            <img src="assets/teardrop-train.png" class="shape-img">
+            <h4>Teardrop-Shaped Hull</h4>
+            <button id="teardrop" onclick="checkShapeClicked(this)" class="exe-btn">Select Shape</button>
+        </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <h4>Remember: The shape you select matters!</h4>
+        <div class="section-content">
+            <h5>The status is: </h5><h5 id="drag-value"></h5>
+        </div>
+    </section>
+    <section class="section" id="shape-launch">
+        <h2>Time to launch</h2>
+        <p>It's time to launch our maglev train through the air. Click Launch once and watch the countdown </p>
+        <button class="exe-btn" onclick="dragCountdown()">Launch</button>
+        <br>
+        <p class="countdown" id="drag-countdown"></p>
+    </section>
+    </center>
+    <script src="script.js" defer></script>
+</body>
+</html>

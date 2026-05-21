@@ -1,0 +1,66 @@
+html {
+    overflow: hidden; /* This is for disabling scroll */
+}
+body {
+    align-items: center;
+    text-align: center;
+    font-family: "Press Start 2P";
+    background-image: url(assets/background-img.jpg);
+    background-size: 100%;
+    color: white;
+}
+.exe-btn {
+    height: 100px;
+    width: 340px;
+    border-radius: 30px;
+    background-color: rgb(0, 255, 0);
+    align-items: center;
+    text-align: center;
+    font-family: "Press Start 2P";
+}
+.section {
+    height: 100vh;
+    padding: 40px;
+    align-items: center;
+}
+header {
+    height: fit-content;
+}
+.separate-section {
+    display: flex;
+    flex-direction: row;
+}
+.windy-weather {
+    width: 800px;
+    height:400px;
+    border-radius: 20px;
+    border: 5px solid white;
+    margin: 40px;
+}
+.textside-img {
+    margin-top: 200px;
+}
+.separate-section-content-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center
+}
+.shape-img {
+    width: 400px;
+    height: 200px;
+    border-radius: 20px;
+    border: 5px solid darkblue;
+    margin: 40px;
+}
+.section-content {
+    background-color: darkblue;
+    color: white;
+    border-radius: 30px;
+    border-left: 5px solid white;
+    margin: 30px;
+    padding: 20px;
+}
+.countdown {
+    font-size: xx-large;
+    margin-top: 100px;
+}
