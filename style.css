@@ -2,23 +2,18 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-y: scroll; 
-    -webkit-overflow-scrolling: touch;
-}
-
-body::-webkit-scrollbar {
-    display: none; 
-}
-
-section {
-    height: 100vh; 
-    width: 100vw;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto; 
-    
+    height: 100%;
+    overflow: hidden; 
     background-image: url(assets/background-img.jpg);
-    background-size: cover;
+    color: white;
+}
+section {
+    min-height: 100vh; 
+    padding: 20px; 
+    box-sizing: border-box; 
+    background-image: url(assets/background-img.jpg);
+    overflow: scroll;
+    font-family: "Press Start 2P";
 }
 .exe-btn {
     height: 100px;
