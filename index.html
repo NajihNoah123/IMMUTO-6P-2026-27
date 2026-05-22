@@ -68,7 +68,7 @@
         <p class="countdown" id="drag-countdown"></p>
         <hr>
         <br>
-        <button class="exe-btn" onclick="goToSection('phase-1-feedback')">Finished launch? Click Here</button>
+        <button class="exe-btn" onclick="goToSection('phase-1-feedback')" id="drag-launchFinished">Finished launch? Click Here</button>
     </section>
     <section id="phase-1-feedback">
         <h2>How do you feel about phase 1?</h2>
@@ -105,22 +105,71 @@
                 <div class="start-point">
                     <p>Launch section</p>
                 </div>
-                <div class="slot">
-                    <p>SLOT 01</p>
+                <div class="slot" ondragover="magnetDrag(event)" ondrop="onMagnetDropped(event, 'slot-01', 'slot-01')">
+                    <p>SLOT 01: Empty</p>
                 </div>
-                <div class="slot">
-                    <p>SLOT 01</p>
+                <div class="slot" ondragover="magnetDrag(event)" ondrop="onMagnetDropped(event, 'slot-02', 'slot-02')">
+                    <p>SLOT 02: Empty</p>
                 </div>
-                <div class="slot">
-                    <p>SLOT 01</p>
+                <div class="slot" ondragover="magnetDrag(event)" ondrop="onMagnetDropped(event, 'slot-03', 'slot-03')">
+                    <p>SLOT 03: Empty</p>
                 </div>
                 <div class="end-point">
                     <p>Brake Section</p>
                 </div>
             </div>
+            <div class="section-content">
+                <div class="question">
+                    <p>SLOT 01</p>
+                    <h4>Q1. What is 156+121?</h4>
+                    <button class="yellow" onclick="slot1(291)">291</button><!-- This is a question for phase 2-->
+                    <button class="yellow" onclick="slot1(277)">277</button>
+                    <button class="yellow" onclick="slot1(256)">256</button>
+                </div>
+                <div class="question">
+                    <p>SLOT 02</p>
+                    <h4>Q. What is 428-218?</h4>
+                    <button class="yellow" onclick="slot2(220)">220</button>
+                    <button class="yellow" onclick="slot2(230)">230</button>
+                    <button class="yellow" onclick="slot2(210)">210</button>
+                </div>
+                <div class="question">
+                    <p>SLOT 03</p>
+                    <h4>Q. What is 12*12?</h4>
+                    <button class="yellow" onclick="slot3(144)">144</button>
+                    <button class="yellow" onclick="slot1(132)">132</button>
+                    <button class="yellow" onclick="slot1(156)">156</button>
+                </div>
+                <div class="magnets">
+                    <button class="magnet" id="slot01" draggable="false" ondragstart="onclickslot(event)">MAGNET 01</button>
+                    <button class="magnet" id="slot02" draggable="false" ondragstart="onclickslot(event)">MAGNET 02</button>
+                    <button class="magnet" id="slot03" draggable="false" ondragstart="onclickslot(event)">MAGNET 03</button>
+                </div>
+            </div>
         </div>
         <div class="section-content">
             <h5>Status is: </h5><h5 id="magnet-status"></h5>
+        </div>
+    </section>
+    <section id="magnet-launch">
+        <h2>Time to launch</h2>
+        <p>It's time to launch our maglev train through the air. Click Launch once and watch the countdown </p>
+        <button class="exe-btn" onclick="magnetCountdown()">Launch</button>
+        <br>
+        <p class="countdown" id="magnet-countdown"></p>
+        <hr>
+        <br>
+        <button class="exe-btn" onclick="goToSection('phase-2-feedback')" id="magnet-launchFinish">Finished launch? Click Here</button>
+    </section>
+    <section id="phase-2-feedback">
+        <h2>How do you feel about phase 1?</h2>
+        <hr>
+            <div class="feedback-grid">
+            <button class="green" onclick="goToSection('phase3-about')">🚀 Optimal</button>
+            <button class="lighter-green" onclick="goToSection('phase3-about')">⚡ Efficient</button>
+            <button class="yellow" onclick="goToSection('phase3-about')">⚖️ Decent</button>
+            <button class="light-red" onclick="goToSection('phase3-about')">⚠️ Unstable</button>
+            <button class="red" onclick="goToSection('phase3-about')">🛑 Flawed</button>
         </div>
     </section>
     </center>
