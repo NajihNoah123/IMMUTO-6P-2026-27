@@ -52,30 +52,31 @@ function dragCountdown() {
     });
 }
 
-// Phase 2: Math Puzzle Codebreaker Processor
 function slot(magnum) {
     let magNum = magnum;
-    let slot1Draggable = document.getElementById('slot-01'); // Fixed targeting ID names
-    let slot2Draggable = document.getElementById('slot-02');
-    let slot3Draggable = document.getElementById('slot-03');
+    
+    let slot1Button = document.getElementById('slot-01'); 
+    let slot2Button = document.getElementById('slot-02');
+    let slot3Button = document.getElementById('slot-03');
 
     if (magNum === 277) {
-       slot1Draggable.setAttribute("draggable", "true"); // Ensures smooth drag state enabling
-       slot1Draggable.style.cursor = "grab";
+       // Turn on dragging for the actual button element!
+       slot1Button.setAttribute("draggable", "true"); 
+       slot1Button.style.cursor = "grab";
+       slot1Button.style.backgroundColor = "#e74c3c"; // Turns the button red to show it's ready!
        magStatus.innerHTML = "Correct Answer! Drag MAGNET 01 into SLOT 01";
-       slot1Draggable.style.backgroundColor = "#e74c3c";
     }
     else if (magNum === 210) {
-       slot2Draggable.setAttribute("draggable", "true");
-       slot2Draggable.style.cursor = "grab";
+       slot2Button.setAttribute("draggable", "true");
+       slot2Button.style.cursor = "grab";
+       slot2Button.style.backgroundColor = "#3498db"; // Turns it blue!
        magStatus.innerHTML = "Correct Answer! Drag MAGNET 02 into SLOT 02";
-       slot2Draggable.style.backgroundColor = "#3498db";
     }
     else if (magNum === 144) { 
-       slot3Draggable.setAttribute("draggable", "true");
-       slot3Draggable.style.cursor = "grab";
+       slot3Button.setAttribute("draggable", "true");
+       slot3Button.style.cursor = "grab";
+       slot3Button.style.backgroundColor = "#2ecc71"; // Turns it green!
        magStatus.innerHTML = "Correct Answer! Drag MAGNET 03 into SLOT 03";
-       slot3Draggable.style.backgroundColor = "#2ecc71";
     }
     else {
         magStatus.innerHTML = "Wrong Answer! Try again.";
