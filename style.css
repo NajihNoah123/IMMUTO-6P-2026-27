@@ -74,11 +74,11 @@ header {
     margin: 0 auto;       
 }
 /* These are buttons design */
-.green { background-color: #2ecc71; color: white; height: 100px;width: 340px;border-radius: 30px; border: 5px solid white; cursor: pointer; font-weight: bold; font-size: xx-large; align-items: center;}
-.lighter-green { background-color: #a3e4d7; color: #111; height: 100px;width: 340px;border-radius: 30px; border: 5px solid white; cursor: pointer; font-weight: bold; font-size: xx-large; align-items: center;}
-.yellow { background-color: #f1c40f; color: #111; height: 100px;width: 340px;border-radius: 30px; border: 5px solid white; cursor: pointer; font-weight: bold; font-size: xx-large; align-items: center;}
-.light-red { background-color: #f5b7b1; color: #111;height: 100px;width: 340px;border-radius: 30px; border: 5px solid white; cursor: pointer; font-weight: bold; font-size: xx-large; align-items: center; }
-.red { background-color: #e74c3c; color: white; height: 100px;width: 340px;border-radius: 30px; border: 5px solid white; cursor: pointer; font-weight: bold; font-size: xx-large; align-items: center;} 
+.green { background-color: #2ecc71; color: white; height: 80px;width: 300px;border-radius: 30px; border: 5px solid white; cursor: pointer; font-weight: bold; font-size: xx-large; align-items: center;}
+.lighter-green { background-color: #a3e4d7; color: #111; height: 80px;width: 300px;border-radius: 30px; border: 5px solid white; cursor: pointer; font-weight: bold; font-size: xx-large; align-items: center;}
+.yellow { background-color: #f1c40f; color: #111; height: 80px;width: 300px;border-radius: 30px; border: 5px solid white; cursor: pointer; font-weight: bold; font-size: xx-large; align-items: center;}
+.light-red { background-color: #f5b7b1; color: #111;height: 80px;width: 300px;border-radius: 30px; border: 5px solid white; cursor: pointer; font-weight: bold; font-size: xx-large; align-items: center; }
+.red { background-color: #e74c3c; color: white; height: 80px;width: 300px;border-radius: 30px; border: 5px solid white; cursor: pointer; font-weight: bold; font-size: xx-large; align-items: center;} 
 
 .start-point {
     background-color: green;
@@ -98,4 +98,6 @@ header {
 .magnet {
     background-color: gray;
     border: 5px solid white;
+    height: 100px;
+    width: 340px
 }
