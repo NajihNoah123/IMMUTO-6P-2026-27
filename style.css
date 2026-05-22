@@ -1,14 +1,24 @@
-html {
-    overflow: hidden; /* This is for disabling scroll */
-    background-image: url(assets/background-img.jpg);
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-y: scroll; 
+    -webkit-overflow-scrolling: touch;
 }
-body {
-    align-items: center;
-    text-align: center;
-    font-family: "Press Start 2P";
+
+body::-webkit-scrollbar {
+    display: none; 
+}
+
+section {
+    height: 100vh; 
+    width: 100vw;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; 
+    
     background-image: url(assets/background-img.jpg);
-    background-size: 100%;
-    color: white;
+    background-size: cover;
 }
 .exe-btn {
     height: 100px;
@@ -19,12 +29,7 @@ body {
     text-align: center;
     font-family: "Press Start 2P";
 }
-section {
-    height: 100vh;
-    padding: 40px;
-    align-items: center;
-    background-image: url(assets/background-img.jpg);
-}
+
 header {
     height: fit-content;
 }
