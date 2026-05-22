@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Immuto Intra Science Project - 6P</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -97,6 +97,42 @@
         </div>
         <button class="exe-btn" onclick="goToSection('select-magnet-location')">Place the magnets</button>
     </section>
+    <section id="magnet-selection">
+    <h2><i>Phase 2: </i>Broken Track</h2>
+    <hr>
+    <div class="split-layout">
+        <div class="track-preview-zone">
+            <h3>🧲 Track Runway ($60\text{ cm}$)</h3>
+            <div class="virtual-track">
+                <div class="track-segment filled">⚡ Start Dock</div>
+                <div class="track-segment empty-slot" id="slot-1">❓ Slot 1: Empty</div>
+                <div class="track-segment filled">⚡ Mid Runway</div>
+                <div class="track-segment empty-slot" id="slot-2">❓ Slot 2: Empty</div>
+                <div class="track-segment filled">🛑 Brake Zone</div>
+            </div>
+        </div>
+        
+        <div class="puzzle-options-zone">
+            <h3>🧩 Solve to Power the Track</h3>
+            <div class="puzzle-card">
+                <p><strong>Problem for Slot 1:</strong> What is the magnetic force multiplier of a dual-rail alignment? (Solve: $15 + 12$)</p>
+                <div class="magnet-buttons">
+                    <button class="magnet-btn" onclick="checkMagnetAnswer(1, 25)">Magnet #25</button>
+                    <button class="magnet-btn" onclick="checkMagnetAnswer(1, 27)">Magnet #27</button>
+                    <button class="magnet-btn" onclick="checkMagnetAnswer(1, 30)">Magnet #30</button>
+                </div>
+            </div>
+            <div class="puzzle-card">
+                <p><strong>Problem for Slot 2:</strong> Calculate the clearance safety margin needed for the sidewalls. (Solve: $42 - 18$)</p>
+                <div class="magnet-buttons">
+                    <button class="magnet-btn" onclick="checkMagnetAnswer(2, 24)">Magnet #24</button>
+                    <button class="magnet-btn" onclick="checkMagnetAnswer(2, 26)">Magnet #26</button>
+                    <button class="magnet-btn" onclick="checkMagnetAnswer(2, 34)">Magnet #34</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     </center>
     <script src="script.js" defer></script>
 </body>
