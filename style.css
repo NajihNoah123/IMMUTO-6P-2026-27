@@ -98,6 +98,7 @@ header {
 .magnet {
     background-color: gray;
     border: 5px solid white;
+    border-radius: 30px;
     height: 100px;
-    width: 340px
+    width: 340px;
 }

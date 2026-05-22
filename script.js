@@ -90,7 +90,7 @@ function onMagnetDropped(event, slotID, correctMagnet) {
     event.preventDefault();
     let buttonID = event.dataTransfer.getData("text/plain");
 
-    if (buttonID === correctMagnet) {
+    if (buttonID === slotID) {
         magStatus.innerHTML = "Magnet Dropped!";
 
         let draggedElement = document.getElementById(buttonID);

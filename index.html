@@ -105,13 +105,13 @@
                 <div class="start-point">
                     <p>Launch section</p>
                 </div>
-                <div class="slot" ondragover="magnetDrag(event)" ondrop="onMagnetDropped(event, 'slot-01', 'slot-01')">
+                <div class="slot" ondragover="magnetDrag(event)" ondrop="onMagnetDropped(event, 'slot-01', 'slot01')">
                     <p>SLOT 01: Empty</p>
                 </div>
-                <div class="slot" ondragover="magnetDrag(event)" ondrop="onMagnetDropped(event, 'slot-02', 'slot-02')">
+                <div class="slot" ondragover="magnetDrag(event)" ondrop="onMagnetDropped(event, 'slot-02', 'slot02')">
                     <p>SLOT 02: Empty</p>
                 </div>
-                <div class="slot" ondragover="magnetDrag(event)" ondrop="onMagnetDropped(event, 'slot-03', 'slot-03')">
+                <div class="slot" ondragover="magnetDrag(event)" ondrop="onMagnetDropped(event, 'slot-03', 'slot03')">
                     <p>SLOT 03: Empty</p>
                 </div>
                 <div class="end-point">
@@ -141,14 +141,14 @@
                     <button class="yellow" onclick="slot(156)">156</button>
                 </div>
                 <div class="magnets">
-                    <button class="magnet" id="slot01" draggable="false" ondragstart="onclickslot(event)">MAGNET 01</button>
-                    <button class="magnet" id="slot02" draggable="false" ondragstart="onclickslot(event)">MAGNET 02</button>
-                    <button class="magnet" id="slot03" draggable="false" ondragstart="onclickslot(event)">MAGNET 03</button>
+                    <button class="magnet" id="slot-01" draggable="false" ondragstart="onclickslot(event)">MAGNET 01</button>
+                    <button class="magnet" id="slot-02" draggable="false" ondragstart="onclickslot(event)">MAGNET 02</button>
+                    <button class="magnet" id="slot-03" draggable="false" ondragstart="onclickslot(event)">MAGNET 03</button>
                 </div>
             </div>
         </div>
         <div class="section-content">
-            <h5>Status is: </h5><h5 id="magnet-status"></h5>
+            <h5>Status is: <h5 id="magnet-status"></h5></h5>
         </div>
     </section>
     <section id="magnet-launch">
