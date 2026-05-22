@@ -12,7 +12,7 @@ section {
     padding: 20px; 
     box-sizing: border-box; 
     background-image: url(assets/background-img.jpg);
-    overflow: scroll;
+    overflow:visible;
     font-family: "Press Start 2P";
 }
 .exe-btn {
