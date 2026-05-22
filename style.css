@@ -99,8 +99,8 @@ header {
     background-color: gray;
     border: 5px solid white;
     border-radius: 30px;
-    height: 100px;
-    width: 340px;
+    height: 60px;
+    width: 200px;
 }
 
 /* Keeps the text structure intact inside our track nodes */
