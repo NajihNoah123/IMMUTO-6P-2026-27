@@ -102,3 +102,27 @@ header {
     height: 100px;
     width: 340px;
 }
+
+/* Keeps the text structure intact inside our track nodes */
+.track-slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.magnet {
+    transition: all 0.2s ease;
+}
+
+/* Enhances button interaction visibility for the judges */
+.magnet[draggable="true"] {
+    border: 5px dashed #2ecc71 !important;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}

@@ -1,83 +1,88 @@
-// These are all variables or constants inside the script. You guys know letters in math, so now its word inside math
+// --- GLOBAL VARIABLES & STATE INITIALIZATION ---
 let correctMagnetsPlaced = 0;
 let magStatus = document.getElementById('magnet-status');
-document.getElementById("magnet-launchFinished").style.display = "none";// This command document.getElementById("id") is how we get an html element
-document.getElementById("drag-launchFinished").style.display = "none";// We use innerHTML to change text inside a text property. More on that in line 29
 
-// Go to section code: This is code for going to a different section okay guys?
+// Safely hiding the terminal launch buttons until milestones are reached
+document.getElementById("magnet-launchFinish").style.display = "none"; // Fixed ID name mismatch
+document.getElementById("drag-launchFinished").style.display = "none";
+
+// Smooth section transition runner
 function goToSection(sectionId) {
-  const sectionID = document.getElementById(sectionId); //This is how they get the element since a button has an onlick property that will run this code
+  const sectionID = document.getElementById(sectionId); 
   if (sectionID) {
-    sectionID.scrollIntoView({  //We use scrollIntoView to move to another section
+    sectionID.scrollIntoView({  
       behavior: 'smooth', 
       block: 'start' 
     });
   }
 }
 
-function magLabWait(milliseconds, action) { //This sets up waiting logic. We can change argument milliseconds to how much seconds we want with 3 zero's
+// Global millisecond delay timer
+function magLabWait(milliseconds, action) { 
     setTimeout(action, milliseconds);
 }
 
-// This is the slecting shape logic
+// Phase 1: Shape Selection Verification Logic
 function checkShapeClicked(btn) {
     if (btn.id === 'teardrop') {
-         document.getElementById('drag-value').innerHTML = "Low drag. Great job. Moving to launch process!🚀🚀"; //If the user clicked teardrop button, it will changed text
-         magLabWait(2000, function() { //Example of waiting logic. This waits 2s and then moves to launching through air drag resistence.
-         goToSection('shape-launch');})
+         document.getElementById('drag-value').innerHTML = "Low drag. Great job. Moving to launch process!🚀🚀"; 
+         magLabWait(2000, function() { 
+             goToSection('shape-launch');
+         });
     }
-    else if (btn.id === 'brick') { // See the innerHTML here. We make like this to change text
-        document.getElementById('drag-value').innerHTML = "High Drag. Efficiency lost. Try Again!❌❌" // If user clicks brick-shape btn, this message comes
+    else if (btn.id === 'brick') { 
+        document.getElementById('drag-value').innerHTML = "High Drag. Efficiency lost. Try Again!❌❌";
     }
     else {
-        document.getElementById('drag-value').innerHTML = "Medium drag, but still not good. Try Again!❌❌" // Same as before but different text
+        document.getElementById('drag-value').innerHTML = "Medium drag, but still not good. Try Again!❌❌"; 
     }
 }
 
-// This is the logic for launch countdown
+// Phase 1: Aerodynamic Air Runway Countdown Indicator
 function dragCountdown() {
-    let dragCountdown = document.getElementById('drag-countdown');// it takes the id for dragCountdown
-    dragCountdown.innerHTML = "5"
-    magLabWait(1000, function() {dragCountdown.innerHTML = "4"});
-
-    magLabWait(2000, function() {dragCountdown.innerHTML = "3"});
-
-    magLabWait(3000, function() {dragCountdown.innerHTML = "2"});
-
-    magLabWait(4000, function() {dragCountdown.innerHTML = "1"});
-
+    let dragCountdownContainer = document.getElementById('drag-countdown');
+    dragCountdownContainer.innerHTML = "5";
+    magLabWait(1000, function() { dragCountdownContainer.innerHTML = "4"; });
+    magLabWait(2000, function() { dragCountdownContainer.innerHTML = "3"; });
+    magLabWait(3000, function() { dragCountdownContainer.innerHTML = "2"; });
+    magLabWait(4000, function() { dragCountdownContainer.innerHTML = "1"; });
     magLabWait(5000, function() {
-        dragCountdown.innerHTML = "LAUNCH NOW! 🚀🚀🚀🚀";
-        document.getElementById("drag-launchFinished").style.display = block;
+        dragCountdownContainer.innerHTML = "LAUNCH NOW! 🚀🚀🚀🚀";
+        document.getElementById("drag-launchFinished").style.display = "block"; // Fixed missing string quotes
     });
 }
 
+// Phase 2: Math Puzzle Codebreaker Processor
 function slot(magnum) {
     let magNum = magnum;
-    let slot1Draggable = document.getElementById('slot01');
-    let slot2Draggable = document.getElementById('slot02');
-    let slot3Draggable = document.getElementById('slot03');
+    let slot1Draggable = document.getElementById('slot-01'); // Fixed targeting ID names
+    let slot2Draggable = document.getElementById('slot-02');
+    let slot3Draggable = document.getElementById('slot-03');
 
     if (magNum === 277) {
-       slot1Draggable.draggable = true;
-       magStatus.innerHTML = "Correct Answer! Drag Magnet slot 01 into the empty place";
-       slot1Draggable.style.backgroundColor = "red";
+       slot1Draggable.setAttribute("draggable", "true"); // Ensures smooth drag state enabling
+       slot1Draggable.style.cursor = "grab";
+       magStatus.innerHTML = "Correct Answer! Drag MAGNET 01 into SLOT 01";
+       slot1Draggable.style.backgroundColor = "#e74c3c";
     }
     else if (magNum === 210) {
-       slot2Draggable.draggable = true;
-       magStatus.innerHTML = "Correct Answer! Drag Magnet slot 02 into the empty place";
-       slot2Draggable.style.backgroundColor = "blue";
+       slot2Draggable.setAttribute("draggable", "true");
+       slot2Draggable.style.cursor = "grab";
+       magStatus.innerHTML = "Correct Answer! Drag MAGNET 02 into SLOT 02";
+       slot2Draggable.style.backgroundColor = "#3498db";
     }
     else if (magNum === 144) { 
-       slot3Draggable.draggable = true;
-       magStatus.innerHTML = "Correct Answer! Drag Magnet slot 03 into the empty place";
-       slot3Draggable.style.backgroundColor = "red";
+       slot3Draggable.setAttribute("draggable", "true");
+       slot3Draggable.style.cursor = "grab";
+       magStatus.innerHTML = "Correct Answer! Drag MAGNET 03 into SLOT 03";
+       slot3Draggable.style.backgroundColor = "#2ecc71";
     }
     else {
         magStatus.innerHTML = "Wrong Answer! Try again.";
     }
 }
 
+// Drag and Drop Pipeline Events
 function onclickslot(event) {
     event.dataTransfer.setData("text/plain", event.target.id);
 }
@@ -90,12 +95,20 @@ function onMagnetDropped(event, slotID, correctMagnet) {
     event.preventDefault();
     let buttonID = event.dataTransfer.getData("text/plain");
 
+    // Fixed comparison to verify the dragged button ID matches the slot requirement parameter
     if (buttonID === slotID) {
-        magStatus.innerHTML = "Magnet Dropped!";
+        magStatus.innerHTML = "Magnet Dropped successfully!";
 
         let draggedElement = document.getElementById(buttonID);
-        let slotElement = document.getElementById(slotID);
+        let slotElement = event.currentTarget; // Targets the slot box directly
+        
+        slotElement.innerHTML = ""; // Clears the fallback text channel
         slotElement.appendChild(draggedElement); 
+        
+        // Style updates for successfully fitted pieces
+        draggedElement.setAttribute("draggable", "false");
+        draggedElement.style.cursor = "default";
+        slotElement.style.backgroundColor = "#2ecc71";
         
         correctMagnetsPlaced = correctMagnetsPlaced + 1;
 
@@ -107,23 +120,20 @@ function onMagnetDropped(event, slotID, correctMagnet) {
         }
     }
     else {
-        magStatus.innerHTML = "Wrong Magnet. Place the correct magnet!";
+        magStatus.innerHTML = "Wrong Magnet layout sequence! Place the correct component.";
     }
 }
 
+// Phase 2: Maglev Core Field Acceleration Countdown
 function magnetCountdown() {
-    let magnetCountdown = document.getElementById('magnet-countdown');
-    magnetCountdown.innerHTML = "5"
-    magLabWait(1000, function() {magnetCountdown.innerHTML = "4"});
-
-    magLabWait(2000, function() {magnetCountdown.innerHTML = "3"});
-
-    magLabWait(3000, function() {magnetCountdown.innerHTML = "2"});
-
-    magLabWait(4000, function() {magnetCountdown.innerHTML = "1"});
-
+    let magnetCountdownContainer = document.getElementById('magnet-countdown');
+    magnetCountdownContainer.innerHTML = "5";
+    magLabWait(1000, function() { magnetCountdownContainer.innerHTML = "4"; });
+    magLabWait(2000, function() { magnetCountdownContainer.innerHTML = "3"; });
+    magLabWait(3000, function() { magnetCountdownContainer.innerHTML = "2"; });
+    magLabWait(4000, function() { magnetCountdownContainer.innerHTML = "1"; });
     magLabWait(5000, function() {
-        magnetCountdown.innerHTML = "LAUNCH NOW! 🚀🚀🚀🚀"
-        document.getElementById("magnet-launchFinished").style.display = "block";
+        magnetCountdownContainer.innerHTML = "LAUNCH NOW! 🚀🚀🚀🚀";
+        document.getElementById("magnet-launchFinish").style.display = "block";
     });
 }

@@ -18,62 +18,61 @@
         </center>
     </header>
     <center>
-    <br>
-    <br>
-    <br>
-    <br>
+    <br><br><br><br>
+    
     <section id="Start">
         <button class="exe-btn" onclick="goToSection('Weather')">Start the game</button>
     </section>
+    
     <section id="Weather">
         <h2>Weather News</h2>
         <div class="separate-section">
-            <img src="assets/windy-weather.jpg" class="windy-weather">
+            <img src="assets/windy-weather.jpg" class="windy-weather" alt="Windy Weather Context">
             <p class="textside-img">The train has to go through a crosswind! You have to select the best shape for the hull of the train to reduce drag on train and get maximum efficiency</p>
         </div>
         <button onclick="goToSection('Select-Hull-Shape')" class="exe-btn">Select the shape</button>
     </section>
+    
     <section id="Select-Hull-Shape">
         <h1><i>Phase 1</i>: Select the hull shape</h1>
         <div class="separate-section-content-row">
-        <div class="section-content">
-            <img src="assets/cone-train.png" class="shape-img">
-            <h4>Cone-Shaped Hull</h4>
-            <button id="cone" onclick="checkShapeClicked(this)" class="exe-btn">Select Shape</button>
+            <div class="section-content">
+                <img src="assets/cone-train.png" class="shape-img" alt="Cone Design">
+                <h4>Cone-Shaped Hull</h4>
+                <button id="cone" onclick="checkShapeClicked(this)" class="exe-btn">Select Shape</button>
+            </div>
+            <div class="section-content">
+                <img src="assets/brick-train.png" class="shape-img" alt="Brick Design">
+                <h4>Brick-Shaped Hull</h4>
+                <button id="brick" onclick="checkShapeClicked(this)" class="exe-btn">Select Shape</button>
+            </div>
+            <div class="section-content">
+                <img src="assets/teardrop-train.png" class="shape-img" alt="Teardrop Design">
+                <h4>Teardrop-Shaped Hull</h4>
+                <button id="teardrop" onclick="checkShapeClicked(this)" class="exe-btn">Select Shape</button>
+            </div>
         </div>
-        <div class="section-content">
-            <img src="assets/brick-train.png" class="shape-img">
-            <h4>Brick-Shaped Hull</h4>
-            <button id="brick" onclick="checkShapeClicked(this)" class="exe-btn">Select Shape</button>
-        </div>
-        <div class="section-content">
-            <img src="assets/teardrop-train.png" class="shape-img">
-            <h4>Teardrop-Shaped Hull</h4>
-            <button id="teardrop" onclick="checkShapeClicked(this)" class="exe-btn">Select Shape</button>
-        </div>
-        </div>
-        <br>
-        <hr>
-        <br>
+        <br><hr><br>
         <h4>Remember: The shape you select matters!</h4>
         <div class="section-content">
             <h5>The status is: </h5><h5 id="drag-value"></h5>
         </div>
     </section>
+    
     <section id="shape-launch">
         <h2>Time to launch</h2>
         <p>It's time to launch our maglev train through the air. Click Launch once and watch the countdown </p>
         <button class="exe-btn" onclick="dragCountdown()">Launch</button>
         <br>
         <p class="countdown" id="drag-countdown"></p>
-        <hr>
-        <br>
+        <hr><br>
         <button class="exe-btn" onclick="goToSection('phase-1-feedback')" id="drag-launchFinished">Finished launch? Click Here</button>
     </section>
+    
     <section id="phase-1-feedback">
         <h2>How do you feel about phase 1?</h2>
         <hr>
-            <div class="feedback-grid">
+        <div class="feedback-grid">
             <button class="green" onclick="goToSection('phase2-about')">🚀 Optimal</button>
             <button class="lighter-green" onclick="goToSection('phase2-about')">⚡ Efficient</button>
             <button class="yellow" onclick="goToSection('phase2-about')">⚖️ Decent</button>
@@ -81,90 +80,88 @@
             <button class="red" onclick="goToSection('phase2-about')">🛑 Flawed</button>
         </div>
     </section>
+    
     <section id="phase2-about">
         <h1><i>Phase 2: </i> Broken Track</h1>
-        <br>
-        <hr>
-        <br>
+        <br><hr><br>
         <div class="separate-section">
-                <p class="textside-image"> There are empty slots on the track. When there is empty slots, the train wont be able to levitate
-                    or move properly. You need to fill these spots with the correct magnet for the train to pass
-                </p> 
-                <br> 
-                <p> You need to ensure the magnets are placed properly with the correct size ad corect position. The game will want to trick you.
-                    You will need to solve soem probelms on the place without the magnets to find which magnet belongs there. This simulation will help you
-                </p>
+            <p class="textside-image"> There are empty slots on the track. When there are empty slots, the train won't be able to levitate or move properly. You need to fill these spots with the correct magnet for the train to pass.</p> 
+            <br> 
+            <p> You need to ensure the magnets are placed properly with the correct size and correct position. The game will want to trick you. You will need to solve some problems on the place without the magnets to find which magnet belongs there. This simulation will help you.</p>
         </div>
         <button class="exe-btn" onclick="goToSection('magnet-selection')">Place the magnets</button>
     </section>
+    
     <section id="magnet-selection">
         <h2><i>Phase 2: </i>Broken Track</h2>
         <div class="separate-section-content-row">
-            <div class="section-content">
+            <div class="section-content" style="min-width: 320px;">
                 <h3>Track Diagram</h3>
-                <div class="start-point">
+                <div class="start-point" style="padding: 10px; margin: 5px; border-radius: 8px;">
                     <p>Launch section</p>
                 </div>
-                <div class="slot" ondragover="magnetDrag(event)" ondrop="onMagnetDropped(event, 'slot-01', 'slot01')">
+                <div class="slot" id="slot-01-zone" ondragover="magnetDrag(event)" ondrop="onMagnetDropped(event, 'slot-01', 'slot01')" style="padding: 20px; margin: 5px; border-radius: 8px; min-height: 60px;">
                     <p>SLOT 01: Empty</p>
                 </div>
-                <div class="slot" ondragover="magnetDrag(event)" ondrop="onMagnetDropped(event, 'slot-02', 'slot02')">
+                <div class="slot" id="slot-02-zone" ondragover="magnetDrag(event)" ondrop="onMagnetDropped(event, 'slot-02', 'slot02')" style="padding: 20px; margin: 5px; border-radius: 8px; min-height: 60px;">
                     <p>SLOT 02: Empty</p>
                 </div>
-                <div class="slot" ondragover="magnetDrag(event)" ondrop="onMagnetDropped(event, 'slot-03', 'slot03')">
+                <div class="slot" id="slot-03-zone" ondragover="magnetDrag(event)" ondrop="onMagnetDropped(event, 'slot-03', 'slot03')" style="padding: 20px; margin: 5px; border-radius: 8px; min-height: 60px;">
                     <p>SLOT 03: Empty</p>
                 </div>
-                <div class="end-point">
+                <div class="end-point" style="padding: 10px; margin: 5px; border-radius: 8px;">
                     <p>Brake Section</p>
                 </div>
             </div>
+            
             <div class="section-content">
-                <div class="question">
+                <div class="question" style="margin-bottom: 15px;">
                     <p>SLOT 01</p>
                     <h4>Q1. What is 156+121?</h4>
-                    <button class="yellow" onclick="slot(291)">291</button><!-- This is a question for phase 2-->
+                    <button class="yellow" onclick="slot(291)">291</button>
                     <button class="yellow" onclick="slot(277)">277</button>
                     <button class="yellow" onclick="slot(256)">256</button>
                 </div>
-                <div class="question">
+                <div class="question" style="margin-bottom: 15px;">
                     <p>SLOT 02</p>
-                    <h4>Q. What is 428-218?</h4>
+                    <h4>Q2. What is 428-218?</h4>
                     <button class="yellow" onclick="slot(220)">220</button>
                     <button class="yellow" onclick="slot(230)">230</button>
                     <button class="yellow" onclick="slot(210)">210</button>
                 </div>
-                <div class="question">
+                <div class="question" style="margin-bottom: 15px;">
                     <p>SLOT 03</p>
-                    <h4>Q. What is 12*12?</h4>
+                    <h4>Q3. What is 12*12?</h4>
                     <button class="yellow" onclick="slot(144)">144</button>
                     <button class="yellow" onclick="slot(132)">132</button>
                     <button class="yellow" onclick="slot(156)">156</button>
                 </div>
-                <div class="magnets">
-                    <button class="magnet" id="slot-01" draggable="false" ondragstart="onclickslot(event)">MAGNET 01</button>
-                    <button class="magnet" id="slot-02" draggable="false" ondragstart="onclickslot(event)">MAGNET 02</button>
-                    <button class="magnet" id="slot-03" draggable="false" ondragstart="onclickslot(event)">MAGNET 03</button>
+                <div class="magnets" style="display: flex; flex-direction: column; gap: 10px; align-items: center; margin-top: 15px;">
+                    <button class="magnet" id="slot-01" draggable="false" ondragstart="onclickslot(event)" style="cursor: no-drop;">MAGNET 01</button>
+                    <button class="magnet" id="slot-02" draggable="false" ondragstart="onclickslot(event)" style="cursor: no-drop;">MAGNET 02</button>
+                    <button class="magnet" id="slot-03" draggable="false" ondragstart="onclickslot(event)" style="cursor: no-drop;">MAGNET 03</button>
                 </div>
             </div>
         </div>
         <div class="section-content">
-            <h5>Status is: <h5 id="magnet-status"></h5></h5>
+            <h5>Status is: </h5><h5 id="magnet-status">Awaiting solution...</h5>
         </div>
     </section>
+    
     <section id="magnet-launch">
         <h2>Time to launch</h2>
         <p>It's time to launch our maglev train through the air. Click Launch once and watch the countdown </p>
         <button class="exe-btn" onclick="magnetCountdown()">Launch</button>
         <br>
         <p class="countdown" id="magnet-countdown"></p>
-        <hr>
-        <br>
+        <hr><br>
         <button class="exe-btn" onclick="goToSection('phase-2-feedback')" id="magnet-launchFinish">Finished launch? Click Here</button>
     </section>
+    
     <section id="phase-2-feedback">
-        <h2>How do you feel about phase 1?</h2>
+        <h2>How do you feel about phase 2?</h2>
         <hr>
-            <div class="feedback-grid">
+        <div class="feedback-grid">
             <button class="green" onclick="goToSection('phase3-about')">🚀 Optimal</button>
             <button class="lighter-green" onclick="goToSection('phase3-about')">⚡ Efficient</button>
             <button class="yellow" onclick="goToSection('phase3-about')">⚖️ Decent</button>
