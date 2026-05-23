@@ -140,3 +140,16 @@ header {
     50% { opacity: 1; }
     100% { opacity: 0.8; }
 }
+
+.magnet-question {
+    background-color: #f1c40f;
+    color: #111; 
+    height: 60px;
+    width: 200px;
+    border-radius: 30px; 
+    border: 5px solid white; 
+    cursor: pointer; 
+    font-weight: bold; 
+    font-size: xx-large; 
+    align-items: center;
+}
